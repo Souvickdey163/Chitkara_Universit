@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vital-Care | Advanced Healthcare Solutions</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#home">Vital<span>Care</span></a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#technology">Technology</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Transforming Healthcare with <span>Innovation</span></h1>
+                <p class="hero-subtitle">Advanced solutions for better patient outcomes and streamlined medical processes.</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">Explore Services</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div id="healthcare-3d"></div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll Down</span>
+            <div class="scroll-icon"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span>Services</span></h2>
+                <p class="section-subtitle">Comprehensive healthcare solutions tailored to your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Patient Monitoring</h3>
+                    <p>Real-time tracking of vital signs with AI-powered alerts for critical changes.</p>
+                    <div class="service-wave"></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h3>Genomic Analysis</h3>
+                    <p>Advanced DNA sequencing and personalized treatment recommendations.</p>
+                    <div class="service-wave"></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neuro Analytics</h3>
+                    <p>Cutting-edge brain activity monitoring and cognitive assessment tools.</p>
+                    <div class="service-wave"></div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Diagnostics</h3>
+                    <p>Machine learning algorithms for faster, more accurate disease detection.</p>
+                    <div class="service-wave"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About <span>Vital-Care</span></h2>
+                <p>Vital-Care is a pioneer in healthcare technology, dedicated to bridging the gap between medical expertise and cutting-edge technology.</p>
+                <p>Founded in 2015, we've been at the forefront of medical innovation, developing solutions that empower healthcare providers and improve patient outcomes.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="150">0</div>
+                        <div class="stat-label">Healthcare Partners</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="500000">0</div>
+                        <div class="stat-label">Patients Served</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="40">0</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="about-globe" id="about-globe"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="technology">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span>Technology</span></h2>
+                <p class="section-subtitle">Innovative solutions powering the future of healthcare</p>
+            </div>
+            <div class="tech-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="ai">AI Platform</button>
+                    <button class="tab-btn" data-tab="iot">IoT Devices</button>
+                    <button class="tab-btn" data-tab="blockchain">Blockchain</button>
+                    <button class="tab-btn" data-tab="biotech">Biotech</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane active" id="ai">
+                        <div class="tech-content">
+                            <h3>VitalAI Platform</h3>
+                            <p>Our proprietary artificial intelligence system analyzes patient data in real-time, identifying patterns and predicting potential health issues before they become critical.</p>
+                            <ul>
+                                <li>98.7% diagnostic accuracy</li>
+                                <li>Real-time processing</li>
+                                <li>Continuous learning</li>
+                                <li>HIPAA compliant</li>
+                            </ul>
+                        </div>
+                        <div class="tech-visual">
+                            <div class="ai-visual" id="ai-visual"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="iot">
+                        <div class="tech-content">
+                            <h3>Smart Medical Devices</h3>
+                            <p>Our IoT-enabled devices provide seamless, continuous monitoring with hospital-grade accuracy in any setting.</p>
+                            <ul>
+                                <li>Wearable ECG monitors</li>
+                                <li>Smart insulin pumps</li>
+                                <li>Non-invasive glucose monitoring</li>
+                                <li>Fall detection sensors</li>
+                            </ul>
+                        </div>
+                        <div class="tech-visual">
+                            <div class="iot-visual" id="iot-visual"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="blockchain">
+                        <div class="tech-content">
+                            <h3>Secure Health Records</h3>
+                            <p>Blockchain technology ensures complete security and privacy of patient health records while enabling seamless sharing between authorized providers.</p>
+                            <ul>
+                                <li>Tamper-proof records</li>
+                                <li>Patient-controlled access</li>
+                                <li>Global interoperability</li>
+                                <li>Instant verification</li>
+                            </ul>
+                        </div>
+                        <div class="tech-visual">
+                            <div class="blockchain-visual" id="blockchain-visual"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="biotech">
+                        <div class="tech-content">
+                            <h3>Biotech Innovations</h3>
+                            <p>Our biotechnology division develops groundbreaking treatments and diagnostic tools at the molecular level.</p>
+                            <ul>
+                                <li>CRISPR-based therapies</li>
+                                <li>Personalized cancer vaccines</li>
+                                <li>Stem cell regeneration</li>
+                                <li>Nanobot drug delivery</li>
+                            </ul>
+                        </div>
+                        <div class="tech-visual">
+                            <div class="biotech-visual" id="biotech-visual"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact <span>Us</span></h2>
+                <p class="section-subtitle">Get in touch to learn more about our solutions</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Location</h3>
+                            <p>123 Healthcare Ave, MedTech Park, San Francisco, CA 94107</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Phone</h3>
+                            <p>+1 (800) 555-HEAL</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <p>info@vital-care.com</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Vital-Care</h3>
+                    <p>Innovating healthcare through technology to create a healthier world for everyone.</p>
+                    <div class="footer-logo">Vital<span>Care</span></div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#technology">Technology</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Patient Monitoring</a></li>
+                        <li><a href="#">Genomic Analysis</a></li>
+                        <li><a href="#">Neuro Analytics</a></li>
+                        <li><a href="#">AI Diagnostics</a></li>
+                        <li><a href="#">Clinical Trials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Vital-Care. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!-- This would be a modal that appears first -->
+<div class="auth-modal" id="authModal">
+    <div class="auth-container">
+        <div class="auth-switcher">
+            <button class="auth-tab active" data-tab="login">Login</button>
+            <button class="auth-tab" data-tab="register">Register</button>
+        </div>
+        
+        <div class="auth-content">
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form active">
+                <h2>Welcome Back</h2>
+                <div class="input-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="input-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="auth-button" href="index.html" >Login</button>
+                <p class="auth-link">Don't have an account? <a href="#" class="switch-to-register">Register</a></p>
+            </form>
+            
+            <!-- Register Form -->
+            <form id="registerForm" class="auth-form">
+                <h2>Create Account</h2>
+                <div class="input-group">
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="input-group">
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="input-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="input-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" required>
+                </div>
+                <button type="submit" class="auth-button">Register</button>
+                <p class="auth-link">Already have an account? <a href="index.html" class="switch-to-login">Login</a></p>
+            </form>
+        </div>
+        
+        <div class="auth-close" id="closeAuthModal">×</div>
+    </div>
+</div>
+
+<style>
+    .auth-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+    }
+    
+    .auth-container {
+        background: white;
+        border-radius: 15px;
+        width: 400px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        transform-style: preserve-3d;
+        animation: modalEntrance 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    
+    @keyframes modalEntrance {
+        0% { transform: scale(0.8) rotateX(-30deg) translateZ(-100px); opacity: 0; }
+        100% { transform: scale(1) rotateX(0deg) translateZ(0); opacity: 1; }
+    }
+    
+    .auth-switcher {
+        display: flex;
+        background-color: #f5f5f5;
+    }
+    
+    .auth-tab {
+        flex: 1;
+        padding: 15px;
+        border: none;
+        background: none;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .auth-tab.active {
+        background-color: white;
+        color: var(--primary-red);
+    }
+    
+    .auth-content {
+        padding: 30px;
+    }
+    
+    .auth-form {
+        display: none;
+    }
+    
+    .auth-form.active {
+        display: block;
+        animation: formFadeIn 0.4s ease;
+    }
+    
+    @keyframes formFadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .input-group {
+        margin-bottom: 20px;
+    }
+    
+    .input-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #555;
+    }
+    
+    .input-group input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+    
+    .input-group input:focus {
+        border-color: var(--primary-blue);
+        box-shadow: 0 0 0 3px rgba(29, 53, 87, 0.1);
+    }
+    
+    .auth-button {
+        width: 100%;
+        padding: 12px;
+        background-color: var(--primary-red);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .auth-button:hover {
+        background-color: #d62839;
+    }
+    
+    .auth-link {
+        text-align: center;
+        margin-top: 15px;
+        color: #666;
+    }
+    
+    .auth-link a {
+        color: var(--primary-blue);
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .auth-close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #999;
+        transition: all 0.3s ease;
+    }
+    
+    .auth-close:hover {
+        color: var(--primary-red);
+        transform: rotate(90deg);
+    }
+</style>
+
+<script>
+    // Authentication system
+    document.addEventListener('DOMContentLoaded', function() {
+        const authModal = document.getElementById('authModal');
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const closeModal = document.getElementById('closeAuthModal');
+        const switchToRegister = document.querySelector('.switch-to-register');
+        const switchToLogin = document.querySelector('.switch-to-login');
+        const authTabs = document.querySelectorAll('.auth-tab');
+        
+        // Show modal on page load
+        authModal.style.display = 'flex';
+        
+        // Tab switching
+        authTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+                
+                authTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                document.querySelectorAll('.auth-form').forEach(form => {
+                    form.classList.remove('active');
+                });
+                
+                document.getElementById(`${tabName}Form`).classList.add('active');
+            });
+        });
+        
+        // Form link switching
+        switchToRegister.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('[data-tab="register"]').click();
+        });
+        
+        switchToLogin.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('[data-tab="login"]').click();
+        });
+        
+        // Close modal
+        closeModal.addEventListener('click', function() {
+            authModal.style.animation = 'modalEntrance 0.4s reverse forwards';
+            setTimeout(() => {
+                authModal.style.display = 'none';
+            }, 400);
+        });
+        
+        // Login form submission
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // Here you would validate and send to backend
+            console.log('Login attempt with:', email, password);
+            
+            // On successful login:
+            sendLoginNotification(email);
+            window.location.href = 'index.html'; // Redirect to main page
+        });
+        
+        // Register form submission
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('registerName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('registerConfirmPassword').value;
+            
+            if(password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // Here you would send to backend
+            console.log('Registration attempt:', name, email, password);
+            
+            // On successful registration:
+            sendRegistrationNotification(email);
+            document.querySelector('[data-tab="login"]').click();
+            alert('Registration successful! Please login.');
+        });
+        
+        function sendRegistrationNotification(email) {
+            // Connect to backend to send email
+            console.log(`Registration confirmation sent to ${email}`);
+        }
+    });
+</script>
